@@ -280,27 +280,13 @@ export function CompressionAnalysis({
       <h3>Compression Analysis</h3>
       <p>
         Compare how different gzip, brotli, and zstd compression levels affect
-        the package tarball size:
+        the package tarball size
       </p>
-      <div className="compression-note">
-        <strong>Process:</strong> The npm tarball (.tgz) is first decompressed
-        to extract the raw tar archive, then recompressed using different
-        compression methods and levels to compare efficiency.
-        <br />
-        <strong>Gzip levels 1-9:</strong> Level 1 is fastest with less
-        compression, level 9 is slowest with maximum compression.
-        <br />
-        <strong>Brotli levels 1-11:</strong> Brotli is a modern compression
-        algorithm that generally provides better compression ratios than gzip,
-        especially at higher levels. Level 1 is fastest with less compression,
-        while level 11 is slowest with maximum compression.
-        <br />
-        <strong>Zstd levels 1-22:</strong> Zstd is a newer compression algorithm
-        that offers high compression ratios and fast decompression speeds. Level
-        1 is fastest with less compression, while level 22 is slowest with
-        maximum compression.
-
-      </div>
+      <p>
+        The original tarball is already gzipped, so we will decompress it
+        first, then apply different compression methods and levels to the raw
+        tar data.
+      </p>
       <button
         onClick={analyzeCompression}
         className="analyze-btn"
