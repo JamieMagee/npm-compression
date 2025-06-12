@@ -3,6 +3,7 @@ import preact from '@preact/preset-vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/npm-compression/',
   plugins: [preact()],
   optimizeDeps: {
     exclude: [
@@ -12,10 +13,5 @@ export default defineConfig({
     esbuildOptions: {
       target: 'es2020',
     },
-  },
-  server: {
-    fs: {
-      allow: ['..']
-    }
   }
 })
